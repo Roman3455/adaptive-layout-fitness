@@ -35,8 +35,7 @@
   Убираем внутренние отступы слева тегам списков,
   у которых есть атрибут class
  */
-:where(ul, ol)
-:where([class]) {
+:where(ul, ol):where([class]) {
   padding-left: 0;
 }
 
@@ -53,8 +52,7 @@ body,
   Убираем внешние отступы вертикали нужным тегам,
   у которых есть атрибут class
  */
-:where(h1,h2,h3,h4,h5,h6,p,ul,ol,dl)
-:where([class]) {
+:where(h1,h2,h3,h4,h5,h6,p,ul,ol,dl):where([class]) {
   margin-block: 0;
 }
 
@@ -240,4 +238,24 @@ svg * {
   --container-padding-x: 15px;
 
   --transition-duration: 0.2s;
+}
+
+body {
+  font-family: var(--font-family-base), sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-light-gray);
+  background-color: var(--color-black);
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  text-transform: uppercase;
 }
